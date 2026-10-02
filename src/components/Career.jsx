@@ -659,9 +659,9 @@ function Career() {
               Submit Your Application
             </Link>
              */}
-<a className="btn btn--primary"
+<a
   href="mailto:info@usbenconsults.com?body=Dear%20Usben%20Consults%2C%0A%0APlease%20find%20my%20CV%20attached%20for%20your%20consideration.%0A%0AKind%20regards%2C"
-  className="career-job__link"
+  className="btn btn--primary career-job__link"
 >
   Submit Your Application →
 </a>
