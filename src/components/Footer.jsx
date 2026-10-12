@@ -347,28 +347,28 @@ function Footer() {
         <div className="footer__patterns">
         
           <img
-            src="/images/naija.jpg"
+            src="/images/Partner1.jpeg"
             alt="Company Logo 1"
             className="footer__pattern-logo"
           />
 
-          {/* <img
-            src="/logos/logo-2.png"
+           <img
+            src="/images/Partner2.png"
             alt="Company Logo 2"
             className="footer__pattern-logo"
           />
 
           <img
-            src="/logos/logo-3.png"
+            src="/images/Lincoln-University.png"
             alt="Company Logo 3"
             className="footer__pattern-logo"
           />
 
-          <img
+          {/* <img
             src="/logos/logo-4.png"
             alt="Company Logo 4"
             className="footer__pattern-logo"
-          /> */}
+          />  */}
 
         </div>
 <div className="footer__bottom">
