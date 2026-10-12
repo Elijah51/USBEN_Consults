@@ -1,26 +1,41 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
+
 import {
   BrowserRouter,
   Routes,
   Route,
   useLocation,
-} from "react-router-dom"
+} from "react-router-dom";
 
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Services from "./components/Services"
-import HowItWorks from "./components/HowItWorks"
-import WhyChooseUs from "./components/WhyChooseUs"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
-import Book from "./components/Book"
-import FlightBooking from "./components/FlightBooking"
-import About from "./components/About"
-import Destinations from "./components/Destinations"
-import Programs from "./components/Programs"
-import Career from "./components/Career"
-import AnnouncementBar from "./components/AnnouncementBar"
-import WhatsAppButton from "./components/WhatsAppButton"
+// Google Analytics
+import GoogleAnalytics from "./components/GoogleAnalytics";
+
+// Existing Components
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import HowItWorks from "./components/HowItWorks";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Book from "./components/Book";
+import FlightBooking from "./components/FlightBooking";
+import About from "./components/About";
+import Destinations from "./components/Destinations";
+import Programs from "./components/Programs";
+import Career from "./components/Career";
+import AnnouncementBar from "./components/AnnouncementBar";
+import WhatsAppButton from "./components/WhatsAppButton";
+
+// Destination Pages
+import UnitedStates from "./components/UnitedStates";
+import UnitedKingdom from "./components/UnitedKingdom";
+import Canada from "./components/Canada.jsx";
+import Australia from "./components/Australia.jsx";
+import NewZealand from "./components/NewZealand.jsx";
+import Ireland from "./components/Ireland.jsx";
+import Europe from "./components/Europe.jsx";
+import Asia from "./components/Asia.jsx";
 
 
 // =====================================================
@@ -28,35 +43,35 @@ import WhatsAppButton from "./components/WhatsAppButton"
 // =====================================================
 
 function Home() {
-  const location = useLocation()
+  const location = useLocation();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search)
-    const section = params.get("section")
+    const params = new URLSearchParams(location.search);
+    const section = params.get("section");
 
     if (!section) {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
-      })
+      });
 
-      return
+      return;
     }
 
     // Give React a moment to render the page
     const timer = setTimeout(() => {
-      const element = document.getElementById(section)
+      const element = document.getElementById(section);
 
       if (element) {
         element.scrollIntoView({
           behavior: "smooth",
           block: "start",
-        })
+        });
       }
-    }, 100)
+    }, 100);
 
-    return () => clearTimeout(timer)
-  }, [location.search])
+    return () => clearTimeout(timer);
+  }, [location.search]);
 
   return (
     <>
@@ -65,47 +80,37 @@ function Home() {
       <Navbar />
 
       <main>
-
         {/* HERO */}
         <Hero />
-
 
         {/* SERVICES */}
         <div id="services" className="footer-section-target">
           <Services />
         </div>
 
-
         {/* HOW IT WORKS */}
         <HowItWorks />
-
 
         {/* WHY CHOOSE US */}
         <WhyChooseUs />
 
-
-        {/* TESTIMONIALS
-            If your Testimonials section is inside
-            WhyChooseUs, you can change the ID there.
-        */}
+        {/* TESTIMONIALS */}
         <div
           id="testimonials"
           className="footer-section-target"
         >
-          {/* Testimonials section can be placed here if you have one */}
+          {/* Testimonials section can be placed here if needed */}
         </div>
 
-
-        {/* CONTACT */}
+        {/* CONTACT / BOOKING SECTION */}
         <div id="contact" className="footer-section-target">
-          <Contact />
+          <Book />
         </div>
-
       </main>
 
       <Footer />
     </>
-  )
+  );
 }
 
 
@@ -118,13 +123,32 @@ function AboutPage() {
     <>
       <AnnouncementBar />
 
-
       <main>
         <About />
       </main>
-
     </>
-  )
+  );
+}
+
+
+// =====================================================
+// UNITED STATES PAGE
+// =====================================================
+
+function UnitedStatesPage() {
+  return (
+    <>
+      <AnnouncementBar />
+
+      <Navbar />
+
+      <main>
+        <UnitedStates />
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
 
@@ -145,7 +169,28 @@ function DestinationsPage() {
 
       <Footer />
     </>
-  )
+  );
+}
+
+
+// =====================================================
+// UNITED KINGDOM PAGE
+// =====================================================
+
+function UnitedKingdomPage() {
+  return (
+    <>
+      <AnnouncementBar />
+
+      <Navbar />
+
+      <main>
+        <UnitedKingdom />
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
 
@@ -166,7 +211,7 @@ function ProgramsPage() {
 
       <Footer />
     </>
-  )
+  );
 }
 
 
@@ -187,7 +232,7 @@ function ContactPage() {
 
       <Footer />
     </>
-  )
+  );
 }
 
 
@@ -208,7 +253,7 @@ function FlightBookingPage() {
 
       <Footer />
     </>
-  )
+  );
 }
 
 
@@ -229,7 +274,7 @@ function BookPage() {
 
       <Footer />
     </>
-  )
+  );
 }
 
 
@@ -250,18 +295,22 @@ function CareerPage() {
 
       <Footer />
     </>
-  )
+  );
 }
 
 
 // =====================================================
-// APP
+// MAIN APP
 // =====================================================
 
 function App() {
   return (
     <BrowserRouter>
 
+      {/* GOOGLE ANALYTICS */}
+      <GoogleAnalytics />
+
+      {/* WEBSITE ROUTES */}
       <Routes>
 
         {/* HOME */}
@@ -270,13 +319,11 @@ function App() {
           element={<Home />}
         />
 
-
         {/* ABOUT */}
         <Route
           path="/about"
           element={<AboutPage />}
         />
-
 
         {/* PROGRAMS */}
         <Route
@@ -284,13 +331,11 @@ function App() {
           element={<ProgramsPage />}
         />
 
-
         {/* DESTINATIONS */}
         <Route
           path="/destinations"
           element={<DestinationsPage />}
         />
-
 
         {/* CONTACT */}
         <Route
@@ -298,6 +343,53 @@ function App() {
           element={<ContactPage />}
         />
 
+        {/* UNITED STATES */}
+        <Route
+          path="/destinations/united-states"
+          element={<UnitedStatesPage />}
+        />
+
+        {/* UNITED KINGDOM */}
+        <Route
+          path="/destinations/united-kingdom"
+          element={<UnitedKingdomPage />}
+        />
+
+        {/* CANADA */}
+        <Route
+          path="/destinations/canada"
+          element={<Canada />}
+        />
+
+        {/* AUSTRALIA */}
+        <Route
+          path="/destinations/australia"
+          element={<Australia />}
+        />
+
+        {/* NEW ZEALAND */}
+        <Route
+          path="/destinations/new-zealand"
+          element={<NewZealand />}
+        />
+
+        {/* IRELAND */}
+        <Route
+          path="/destinations/ireland"
+          element={<Ireland />}
+        />
+
+        {/* EUROPE */}
+        <Route
+          path="/destinations/europe"
+          element={<Europe />}
+        />
+
+        {/* ASIA */}
+        <Route
+          path="/destinations/asia"
+          element={<Asia />}
+        />
 
         {/* FLIGHT BOOKING */}
         <Route
@@ -305,13 +397,11 @@ function App() {
           element={<FlightBookingPage />}
         />
 
-
         {/* BOOK CONSULTATION */}
         <Route
           path="/book"
           element={<BookPage />}
         />
-
 
         {/* CAREER */}
         <Route
@@ -321,12 +411,11 @@ function App() {
 
       </Routes>
 
-
       {/* FIXED WHATSAPP BUTTON */}
       <WhatsAppButton />
 
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

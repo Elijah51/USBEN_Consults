@@ -158,7 +158,7 @@ function Contact() {
         {/* =========================
             CONTACT INFORMATION
         ========================== */}
-        <div className="contact__intro">
+        {/* <div className="contact__intro">
 
           <p className="section__eyebrow">
             Get In Touch
@@ -270,7 +270,7 @@ function Contact() {
 
           </div>
 
-        </div>
+        </div> */}
 
 
         {/* =========================

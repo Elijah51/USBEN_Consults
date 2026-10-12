@@ -1,5 +1,5 @@
 function WhatsAppButton() {
-  const phoneNumber = '2347062822946'
+  const phoneNumber = '2348150994222'
 
   const message = encodeURIComponent(
     'Hello Usben Consults, I would like to make an enquiry about your services.'
@@ -11,8 +11,6 @@ function WhatsAppButton() {
     <a
       href={whatsappUrl}
       className="whatsapp-float"
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
     >
       <svg

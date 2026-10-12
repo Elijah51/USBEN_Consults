@@ -159,10 +159,10 @@ function Hero() {
     },
 
     {
-      image: '/images/hero2.jpg',
-      heading: 'Turn Your Dreams Into Reality',
-      text: 'From application to admission, we are here to guide you every step of the way.',
-      buttonText: 'Contact Us',
+      image: '/images/Slider3.jpeg',
+      // heading: 'Turn Your Dreams Into Reality',
+      // text: 'From application to admission, we are here to guide you every step of the way.',
+      // buttonText: 'Contact Us',
       buttonTarget: 'contact',
     },
 

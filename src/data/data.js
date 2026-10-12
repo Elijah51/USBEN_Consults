@@ -150,7 +150,7 @@ export const destinations = [
   },
 
   {
-    id: 5,
+    id: 7,
     flag: 'https://flagcdn.com/w80/eu.png',
     country: 'Europe ',
     description: 'Low-cost, high-quality education across every field.',
@@ -158,7 +158,7 @@ export const destinations = [
       'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80',
   },
   {
-    id: 6,
+    id: 8,
     flag: 'https://flagcdn.com/w80/as.png',
     country: 'Asia',
     description: 'Prestigious programs at the heart of European culture.',
