@@ -26,6 +26,7 @@ import Programs from "./components/Programs";
 import Career from "./components/Career";
 import AnnouncementBar from "./components/AnnouncementBar";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Testimonials from "./components/Testimonials";
 
 // Destination Pages
 import UnitedStates from "./components/UnitedStates";
@@ -99,7 +100,7 @@ function Home() {
           id="testimonials"
           className="footer-section-target"
         >
-          {/* Testimonials section can be placed here if needed */}
+         <Testimonials />
         </div>
 
         {/* CONTACT / BOOKING SECTION */}
