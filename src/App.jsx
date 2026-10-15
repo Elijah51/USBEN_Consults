@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import {
   BrowserRouter,
   Routes,
@@ -38,10 +37,10 @@ import Ireland from "./components/Ireland.jsx";
 import Europe from "./components/Europe.jsx";
 import Asia from "./components/Asia.jsx";
 
-
-// =====================================================
-// HOME PAGE SECTION SCROLL
-// =====================================================
+// Blog pages
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AdminBlog from "./pages/AdminBlog";
 
 function Home() {
   const location = useLocation();
@@ -51,24 +50,13 @@ function Home() {
     const section = params.get("section");
 
     if (!section) {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    // Give React a moment to render the page
     const timer = setTimeout(() => {
       const element = document.getElementById(section);
-
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
+      if (element) element.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
 
     return () => clearTimeout(timer);
@@ -77,344 +65,97 @@ function Home() {
   return (
     <>
       <AnnouncementBar />
-
       <Navbar />
-
       <main>
-        {/* HERO */}
         <Hero />
-
-        {/* SERVICES */}
-        <div id="services" className="footer-section-target">
-          <Services />
-        </div>
-
-        {/* HOW IT WORKS */}
+        <div id="services" className="footer-section-target"><Services /></div>
         <HowItWorks />
-
-        {/* WHY CHOOSE US */}
         <WhyChooseUs />
-
-        {/* TESTIMONIALS */}
-        <div
-          id="testimonials"
-          className="footer-section-target"
-        >
-         <Testimonials />
-        </div>
-
-        {/* CONTACT / BOOKING SECTION */}
-        <div id="contact" className="footer-section-target">
-          <Book />
-        </div>
+        <div id="testimonials" className="footer-section-target"><Testimonials /></div>
+        <div id="contact" className="footer-section-target"><Book /></div>
       </main>
-
       <Footer />
     </>
   );
 }
-
-
-// =====================================================
-// ABOUT PAGE
-// =====================================================
 
 function AboutPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <main>
-        <About />
-      </main>
-    </>
-  );
+  return <><AnnouncementBar /><main><About /></main></>;
 }
-
-
-// =====================================================
-// UNITED STATES PAGE
-// =====================================================
 
 function UnitedStatesPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <UnitedStates />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><UnitedStates /></main><Footer /></>;
 }
-
-
-// =====================================================
-// DESTINATIONS PAGE
-// =====================================================
 
 function DestinationsPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <Destinations />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><Destinations /></main><Footer /></>;
 }
-
-
-// =====================================================
-// UNITED KINGDOM PAGE
-// =====================================================
 
 function UnitedKingdomPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <UnitedKingdom />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><UnitedKingdom /></main><Footer /></>;
 }
-
-
-// =====================================================
-// PROGRAMS PAGE
-// =====================================================
 
 function ProgramsPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <Programs />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><Programs /></main><Footer /></>;
 }
-
-
-// =====================================================
-// CONTACT PAGE
-// =====================================================
 
 function ContactPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <Contact />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><Contact /></main><Footer /></>;
 }
-
-
-// =====================================================
-// FLIGHT BOOKING PAGE
-// =====================================================
 
 function FlightBookingPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <FlightBooking />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><FlightBooking /></main><Footer /></>;
 }
-
-
-// =====================================================
-// BOOKING PAGE
-// =====================================================
 
 function BookPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <Book />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><Book /></main><Footer /></>;
 }
-
-
-// =====================================================
-// CAREER PAGE
-// =====================================================
 
 function CareerPage() {
-  return (
-    <>
-      <AnnouncementBar />
-
-      <Navbar />
-
-      <main>
-        <Career />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <><AnnouncementBar /><Navbar /><main><Career /></main><Footer /></>;
 }
 
+function BlogPage() {
+  return <><AnnouncementBar /><Navbar /><main><Blog /></main><Footer /></>;
+}
 
-// =====================================================
-// MAIN APP
-// =====================================================
+function BlogArticlePage() {
+  return <><AnnouncementBar /><Navbar /><main><BlogPost /></main><Footer /></>;
+}
+
+function AdminBlogPage() {
+  // The admin page deliberately has no public navigation or footer.
+  return <main><AdminBlog /></main>;
+}
 
 function App() {
   return (
     <BrowserRouter>
-
-      {/* GOOGLE ANALYTICS */}
       <GoogleAnalytics />
-
-      {/* WEBSITE ROUTES */}
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/programs" element={<ProgramsPage />} />
+        <Route path="/destinations" element={<DestinationsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/destinations/united-states" element={<UnitedStatesPage />} />
+        <Route path="/destinations/united-kingdom" element={<UnitedKingdomPage />} />
+        <Route path="/destinations/canada" element={<Canada />} />
+        <Route path="/destinations/australia" element={<Australia />} />
+        <Route path="/destinations/new-zealand" element={<NewZealand />} />
+        <Route path="/destinations/ireland" element={<Ireland />} />
+        <Route path="/destinations/europe" element={<Europe />} />
+        <Route path="/destinations/asia" element={<Asia />} />
+        <Route path="/flight-booking" element={<FlightBookingPage />} />
+        <Route path="/book" element={<BookPage />} />
+        <Route path="/career" element={<CareerPage />} />
 
-        {/* HOME */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        {/* ABOUT */}
-        <Route
-          path="/about"
-          element={<AboutPage />}
-        />
-
-        {/* PROGRAMS */}
-        <Route
-          path="/programs"
-          element={<ProgramsPage />}
-        />
-
-        {/* DESTINATIONS */}
-        <Route
-          path="/destinations"
-          element={<DestinationsPage />}
-        />
-
-        {/* CONTACT */}
-        <Route
-          path="/contact"
-          element={<ContactPage />}
-        />
-
-        {/* UNITED STATES */}
-        <Route
-          path="/destinations/united-states"
-          element={<UnitedStatesPage />}
-        />
-
-        {/* UNITED KINGDOM */}
-        <Route
-          path="/destinations/united-kingdom"
-          element={<UnitedKingdomPage />}
-        />
-
-        {/* CANADA */}
-        <Route
-          path="/destinations/canada"
-          element={<Canada />}
-        />
-
-        {/* AUSTRALIA */}
-        <Route
-          path="/destinations/australia"
-          element={<Australia />}
-        />
-
-        {/* NEW ZEALAND */}
-        <Route
-          path="/destinations/new-zealand"
-          element={<NewZealand />}
-        />
-
-        {/* IRELAND */}
-        <Route
-          path="/destinations/ireland"
-          element={<Ireland />}
-        />
-
-        {/* EUROPE */}
-        <Route
-          path="/destinations/europe"
-          element={<Europe />}
-        />
-
-        {/* ASIA */}
-        <Route
-          path="/destinations/asia"
-          element={<Asia />}
-        />
-
-        {/* FLIGHT BOOKING */}
-        <Route
-          path="/flight-booking"
-          element={<FlightBookingPage />}
-        />
-
-        {/* BOOK CONSULTATION */}
-        <Route
-          path="/book"
-          element={<BookPage />}
-        />
-
-        {/* CAREER */}
-        <Route
-          path="/career"
-          element={<CareerPage />}
-        />
-
+        {/* Blog */}
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogArticlePage />} />
+        <Route path="/admin/blog" element={<AdminBlogPage />} />
       </Routes>
-
-      {/* FIXED WHATSAPP BUTTON */}
       <WhatsAppButton />
-
     </BrowserRouter>
   );
 }

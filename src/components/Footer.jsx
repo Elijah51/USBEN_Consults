@@ -330,6 +330,15 @@ function Footer() {
               ᕷ
             </a>
 
+            <a
+              href="https://www.youtube.com/@UsbenConsultsLtd-v4l"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              ▶️
+            </a>
+
           </div>
 
         </div>
