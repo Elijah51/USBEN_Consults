@@ -17,7 +17,7 @@ const EMPTY_FORM = {
 export default function AdminBlog() {
   const [session, setSession] = useState(null);
   const [checkingSession, setCheckingSession] = useState(true);
-  const [email, setEmail] = useState(ADMIN_EMAIL);
+  const [email, setEmail] = useState(ADMIN_EMAILS[0]);
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
   const [posts, setPosts] = useState([]);
