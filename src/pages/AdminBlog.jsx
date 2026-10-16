@@ -4,7 +4,10 @@ import { supabase } from "../supabaseClient";
 import { makeSlug } from "./Blog";
 import "./Blog.css";
 
-const ADMIN_EMAIL = "elijahsimon820@gmail.com";
+const ADMIN_EMAILS = [
+  "elijahsimon820@gmail.com",
+  "usbenconsults@gmail.com",
+];
 const EMPTY_FORM = {
   id: null, title: "", slug: "", excerpt: "", content: "",
   category: "Study Abroad", author_name: "Usben Consults Ltd",
@@ -26,7 +29,7 @@ export default function AdminBlog() {
   const [autoSlug, setAutoSlug] = useState(true);
 
   const isAdmin = useMemo(
-    () => session?.user?.email?.toLowerCase() === ADMIN_EMAIL,
+    () => ADMIN_EMAILS.includes(session?.user?.email?.toLowerCase() || ""),
     [session]
   );
 
@@ -68,8 +71,8 @@ export default function AdminBlog() {
   async function signIn(event) {
     event.preventDefault();
     setAuthError("");
-    if (email.trim().toLowerCase() !== ADMIN_EMAIL) {
-      setAuthError(`Please sign in with ${ADMIN_EMAIL}.`);
+    if (!ADMIN_EMAILS.includes(email.trim().toLowerCase())) {
+      setAuthError(`Please sign in with one of these authorized emails: ${ADMIN_EMAILS.join(", ")}.`);
       return;
     }
     const { error } = await supabase.auth.signInWithPassword({
