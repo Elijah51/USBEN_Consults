@@ -118,6 +118,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+
 const AUTOPLAY_DELAY = 2300
 
 function Hero() {
