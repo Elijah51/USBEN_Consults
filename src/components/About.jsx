@@ -72,7 +72,7 @@ function About() {
           <div className="container">
 
             <p className="section__eyebrow">
-              About Usben Consults Ltd
+              About Usben Consults LTD
             </p>
 
             <h1>
