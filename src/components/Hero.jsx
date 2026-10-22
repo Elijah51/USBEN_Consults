@@ -22,7 +22,7 @@ function Hero() {
       heading: 'Study Abroad With Confidence',
       text: 'Get expert guidance to study at top universities around the world.',
       buttonText: 'Get Started',
-      buttonTarget: '/blog',
+      buttonTarget: '/programs',
     },
 
     {
@@ -30,15 +30,15 @@ function Hero() {
       heading: 'Your Future Starts Here',
       text: 'Discover international study opportunities that match your goals.',
       buttonText: 'Explore Programs',
-      buttonTarget: '/blog',
+      buttonTarget: '/destinations',
     },
 
     {
       image: '/images/Slider3.jpeg',
-      heading: '',
+      heading: '.',
       text: '',
-      buttonText: '',
-      buttonTarget: '/blog',
+      buttonText: 'Explore Programs',
+      buttonTarget: '/destinations',
     },
 
     // Add more slides here if needed.
