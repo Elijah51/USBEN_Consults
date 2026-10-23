@@ -1,0 +1,9 @@
+
+User-agent: *
+Allow: /
+
+# Prevent crawling of the blog administration page
+Disallow: /admin/blog
+
+# XML sitemap
+Sitemap: https://www.usbenconsults.com/sitemap.xml
