@@ -4,6 +4,7 @@
 import { Link } from 'react-router-dom'
 import { services } from '../data/data.js'
 import useScrollReveal from '../hooks/useScrollReveal.js'
+import SEO from '../components/SEO';
 
 function ServiceCard({ service, index }) {
   const [ref, visible] = useScrollReveal()
@@ -59,7 +60,15 @@ function ServiceCard({ service, index }) {
 
 function Services() {
   return (
+    
+    
     <section id="services" className="section services">
+      <SEO
+  title="Study Abroad, Visa Support & Travel Services"
+  description="Explore Usben Consults Limited services, including international education guidance, visa application support, and flight booking assistance."
+  path="/services"
+/>
+
       <div className="container">
         <div className="section__header">
           <p className="section__eyebrow">Our Services</p>

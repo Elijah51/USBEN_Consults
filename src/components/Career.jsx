@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom"
+import SEO from '../components/SEO';
 
 function Career() {
   return (
     <main className="career-page">
+      <SEO
+  title="Careers at Usben Consults Limited"
+  description="Discover career opportunities at Usben Consults Limited and learn how to explore available positions with our team."
+  path="/career"
+/>
 
       {/* ==============================
           HERO

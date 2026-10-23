@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://usbenconsults.com/</loc>
-    </url>
+  <url>
+    <loc>https://www.usbenconsults.com/</loc>
+  </url>
 
-    <url>
-        <loc>https://usbenconsults.com/about</loc>
-    </url>
+  <url>
+    <loc>https://www.usbenconsults.com/about</loc>
+  </url>
 
-    <url>
-        <loc>https://usbenconsults.com/services</loc>
-    </url>
+  <url>
+    <loc>https://www.usbenconsults.com/services</loc>
+  </url>
 
-    <url>
-        <loc>https://usbenconsults.com/blog</loc>
-    </url>
-    <url>
-        <loc>https://usbenconsults.com/destinations</loc>
-    </url>
-    <url>
-        <loc>https://usbenconsults.com/career</loc>
-    </url>
-    
+  <url>
+    <loc>https://www.usbenconsults.com/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://www.usbenconsults.com/destinations</loc>
+  </url>
+
+  <url>
+    <loc>https://www.usbenconsults.com/career</loc>
+  </url>
+
+  <url>
+    <loc>https://www.usbenconsults.com/programs</loc>
+  </url>
+
+  <url>
+    <loc>https://www.usbenconsults.com/contact</loc>
+  </url>
 
 </urlset>

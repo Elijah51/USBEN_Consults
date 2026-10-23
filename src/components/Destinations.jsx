@@ -1,6 +1,7 @@
 import { destinations } from '../data/data.js'
 import { Link } from 'react-router-dom'
 import useScrollReveal from '../hooks/useScrollReveal.js'
+import SEO from '../components/SEO';
 
 const destinationRoutes = {
   'United States': '/destinations/united-states',
@@ -88,6 +89,12 @@ function Destinations() {
       id="destinations"
       className="section destinations"
     >
+
+      <SEO
+  title="Study Abroad Destinations | Usben Consults"
+  description="Explore international study destinations and discover information about universities, admissions, and studying abroad."
+  path="/destinations"
+/>
       <div className="container">
 
         {/* SECTION HEADER */}

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { destinations } from '../data/data.js'
+import SEO from '../components/SEO';
 
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -153,6 +154,11 @@ function Contact() {
       className="section contact"
     >
 
+<SEO
+  title="Contact Us | Usben Consults Limited"
+  description="Contact Usben Consults Limited for enquiries about studying abroad, visa support, international education, and flight booking."
+  path="/contact"
+/>
       <div className="container contact__grid">
 
         {/* =========================

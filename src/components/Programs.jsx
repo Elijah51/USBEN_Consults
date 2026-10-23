@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { programFilters, programs } from '../data/data.js'
+import SEO from '../components/SEO';
 
 function Programs() {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -11,6 +12,11 @@ function Programs() {
 
   return (
     <section id="programs" className="section programs">
+      <SEO
+  title="Study Abroad Programs | Usben Consults"
+  description="Explore international study programs and get guidance on finding educational opportunities that match your academic goals."
+  path="/programs"
+/>
       <div className="container">
         <div className="section__header">
           <p className="section__eyebrow">Find Your Program</p>

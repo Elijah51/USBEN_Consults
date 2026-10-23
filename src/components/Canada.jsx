@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-
+import SEO from '../components/SEO';
 
 const universities = [
   {
@@ -100,6 +100,13 @@ const categories = [
 ]
 
 function Canada() {
+
+  <SEO
+  title="Study in Canada | Usben Consults"
+  description="Explore opportunities to study in Canada, including university admissions information and guidance for international students."
+  path="/destinations/canada"
+/>
+
   const [search, setSearch] = useState('')
   const [level, setLevel] = useState('All')
   const [category, setCategory] = useState('All')

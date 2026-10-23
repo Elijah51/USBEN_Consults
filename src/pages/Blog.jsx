@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import "./Blog.css";
+import SEO from '../components/SEO';
 
 function formatDate(value) {
   if (!value) return "";
@@ -65,6 +66,13 @@ export default function Blog() {
 
   return (
     <section className="ub-blog-page">
+
+      <SEO
+  title="Study Abroad and Travel Advice Blog | Usben Consults"
+  description="Read helpful articles about studying abroad, university applications, visa preparation, international education, and travel planning."
+  path="/blog"
+/>
+
       <div className="ub-blog-hero">
         <p className="ub-blog-eyebrow">USBEN CONSULTS LTD</p>
         <h1>Insights, Advice & Opportunities</h1>

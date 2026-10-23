@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { stats } from '../data/data.js'
+import SEO from '../components/SEO';
 
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -64,7 +65,11 @@ function About() {
     <>
       {/* NAVBAR */}
       <Navbar />
-
+<SEO
+  title="About Usben Consults Limited | Our Company"
+  description="Learn about Usben Consults Limited and our services in study abroad guidance, visa support, and flight booking."
+  path="/about"
+/>
       <main className="about-page">
 
         {/* ABOUT HERO */}
