@@ -41,6 +41,7 @@ import Asia from "./components/Asia.jsx";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AdminBlog from "./pages/AdminBlog";
+import AdminSlider from "./pages/AdminSlider";
 
 function Home() {
   const location = useLocation();
@@ -154,6 +155,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
         <Route path="/admin/blog" element={<AdminBlogPage />} />
+        <Route path="/admin/slider" element={<AdminSlider />} />
       </Routes>
       <WhatsAppButton />
     </BrowserRouter>

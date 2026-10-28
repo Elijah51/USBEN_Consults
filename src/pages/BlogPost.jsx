@@ -144,7 +144,7 @@ export default function BlogPost() {
           />
         )}
 
-        <div className="ub-blog-article__content">
+        {/* <div className="ub-blog-article__content">
           {(post.content || "")
             .split(/\r?\n/)
             .map((line, index) =>
@@ -154,8 +154,13 @@ export default function BlogPost() {
                 <br key={index} />
               )
             )}
-        </div>
-
+        </div> */}
+<div
+  className="ub-blog-article__content"
+  dangerouslySetInnerHTML={{
+    __html: post.content || "",
+  }}
+/>
         <div className="ub-blog-article__bottom">
           <Link className="ub-blog-read-more" to="/blog">
             Explore more articles →
