@@ -1,0 +1,85 @@
+.ub-rich-editor {
+border: 1px solid #d1d5db;
+border-radius: 8px;
+overflow: hidden;
+background: #ffffff;
+color: #1f2937;
+}
+
+.ub-rich-editor__toolbar {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+padding: 10px;
+border-bottom: 1px solid #e5e7eb;
+background: #f9fafb;
+}
+
+.ub-rich-editor__toolbar button {
+border: 1px solid #d1d5db;
+border-radius: 5px;
+background: #ffffff;
+padding: 7px 10px;
+color: #1f2937;
+cursor: pointer;
+font-size: 13px;
+}
+
+.ub-rich-editor__toolbar button:hover {
+background: #eef2ff;
+}
+
+.ub-rich-editor__toolbar button.is-active {
+background: #1d4ed8;
+border-color: #1d4ed8;
+color: #ffffff;
+}
+
+.ub-rich-editor__content {
+min-height: 320px;
+padding: 18px;
+outline: none;
+line-height: 1.8;
+overflow-wrap: anywhere;
+}
+
+.ub-rich-editor__content p {
+margin: 0 0 14px;
+}
+
+.ub-rich-editor__content h2 {
+margin: 24px 0 12px;
+font-size: 1.6rem;
+line-height: 1.3;
+}
+
+.ub-rich-editor__content h3 {
+margin: 20px 0 10px;
+font-size: 1.25rem;
+line-height: 1.4;
+}
+
+.ub-rich-editor__content ul,
+.ub-rich-editor__content ol {
+padding-left: 28px;
+margin: 12px 0 18px;
+}
+
+.ub-rich-editor__content blockquote {
+margin: 18px 0;
+padding: 10px 16px;
+border-left: 4px solid #2563eb;
+background: #f3f4f6;
+}
+
+.ub-rich-editor__content a {
+color: #2563eb;
+text-decoration: underline;
+}
+
+.ub-rich-editor-loading {
+padding: 20px;
+border: 1px solid #d1d5db;
+border-radius: 8px;
+color: #6b7280;
+}

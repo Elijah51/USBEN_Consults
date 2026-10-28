@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import { makeSlug } from "./Blog";
 import "./Blog.css";
+import RichTextEditor from "./RichTextEditor";
 
 const ADMIN_EMAILS = [
   "elijahsimon820@gmail.com",
@@ -255,10 +256,23 @@ export default function AdminBlog() {
           </label>
           {form.cover_image && !imageFile && <img className="ub-admin-image-preview" src={form.cover_image} alt="Current cover" />}
           {imageFile && <p className="ub-admin-help">Selected: {imageFile.name}</p>}
-          <label>Article content
+          {/* <label>Article content
             <textarea className="ub-admin-content-input" value={form.content} onChange={e => updateField("content", e.target.value)} rows="14" required />
             <small>Use blank lines between paragraphs. This editor currently supports plain text.</small>
-          </label>
+          </label> */}
+          <div className="ub-admin-content-field">
+  <label>Article content</label>
+
+  <RichTextEditor
+    value={form.content}
+    onChange={(value) => updateField("content", value)}
+  />
+
+  {!form.content.replace(/<[^>]*>/g, "").trim() && (
+    <small>Please enter your article content.</small>
+  )}
+</div>
+
           <div className="ub-admin-editor__actions">
             <button className="ub-admin-button" type="submit" disabled={saving}>{saving ? "Saving…" : form.status === "published" ? "Publish article" : "Save draft"}</button>
             {form.id && <button type="button" className="ub-admin-secondary" onClick={startNewPost}>Cancel edit</button>}
